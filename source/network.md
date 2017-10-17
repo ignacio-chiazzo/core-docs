@@ -359,8 +359,10 @@ Apollo lets you automatically batch multiple queries into one request when they 
 
 To use batching, simply pass a `BatchedNetworkInterface` to the `ApolloClient` constructor. You can do so by using  `createBatchingNetworkInterface` instead of `createNetworkInterface`. `createBatchingNetworkInterface` takes a single options object (the same as `createNetworkInterface`) with an additional `batchInterval` option, which determines how long (in milliseconds) the network interface batches up queries before sending them to the server. You can also provide the `batchMax` option to define the maximum amount of queries you want in one batch. When left empty this will send all queries within the `batchInterval` in one batch.
 
-<h3 id="BatchingExample">Query batching example</h3>
+<h3 id="MutationBatching">Mutation batching</h3>
+Apollo also lets you automatically run multiple mutations in one request, similar to queries, by batching multiple mutations into one request.
 
+<h3 id="BatchingExample">Query batching example</h3>
 This example shows how to create the `BatchedNetworkInterface` that you'll pass to the `ApolloClient` constructor:
 
 ```javascript
